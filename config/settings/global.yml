@@ -1,0 +1,16 @@
+---
+
+default_backend_settings:
+  extra_config:
+    backend_http:
+      return_error_code: true
+      return_error_details: default value
+      foo:
+        bar:
+          baz: default value
+    backend/http:
+      return_error_code: true
+      return_error_details: default value
+      foo:
+        bar:
+          baz: default value

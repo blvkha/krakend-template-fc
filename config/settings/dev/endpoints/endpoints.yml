@@ -1,0 +1,18 @@
+---
+
+endpoints:
+
+  - endpoint: /my-endpoint
+    method: GET
+    backends:
+      - url_pattern: /
+        host:
+        - http://localhost:8080
+        extra_config:
+          backend/http:
+            return_error_details: "override from endpoint"
+          backend_http:
+            return_error_details: "override from endpoint"
+            foo:
+              bar:
+                baz: override from endpoint

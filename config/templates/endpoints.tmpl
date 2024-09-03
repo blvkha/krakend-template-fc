@@ -1,0 +1,14 @@
+{{ $global := $.global }}
+
+{{ range $endpoint := $._endpoints }}
+{
+  "endpoint": "{{ $endpoint.endpoint }}",
+  "method": "{{ $endpoint.method }}",
+  "backend": [
+    {{ range $backend := $endpoint.backends }}
+      {{ $_backend := (deepCopy $global.default_backend_settings | merge $backend) }}
+      {{ $_backend | toJson }},
+    {{ end }}
+  ]
+},
+{{ end }}

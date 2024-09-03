@@ -1,0 +1,11 @@
+
+services:
+
+  krakend:
+    image: krakend/krakend-ee:2.7-watch
+    command: ["run", "-dc", "/etc/krakend/templates/krakend.tmpl"]
+    environment:
+      FC_CONFIG: flexible_config.json
+    volumes:
+      - ./config:/etc/krakend
+      - ./output:/output

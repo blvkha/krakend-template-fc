@@ -1,0 +1,19 @@
+{
+  "$schema": "https://www.krakend.io/schema/v2.5/flexible_config.json",
+  "settings": {
+      "paths": [
+        "settings",
+        "settings/dev"
+      ],
+      "allow_overwrite": true,
+      "allowed_suffixes": [
+          ".yml"
+      ]
+  },
+  "templates": {
+      "paths": [
+        "templates"
+      ]
+  },
+  "out": "/output/krakend.json"
+}

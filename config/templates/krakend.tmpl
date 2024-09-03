@@ -1,0 +1,11 @@
+{
+  "$schema": "https://www.krakend.io/schema/v2.6/krakend.json",
+  "version": 3,
+  "name": "krakend",
+  "endpoints": [
+  {{ range $_endpoints := .endpoints }}
+  {{ $context := (merge (deepCopy $) (dict "_endpoints" $_endpoints.endpoints)) }}
+  {{ template "endpoints.tmpl" $context }}
+  {{ end }}
+  ]
+}
